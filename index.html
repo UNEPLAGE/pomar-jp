@@ -286,7 +286,7 @@ table.szt{width:100%;border-collapse:collapse;font-size:12.5px;letter-spacing:.0
   <h3 class="en">KAARRE Men&#x27;s GORE-TEX® CHELSEA BOOTS<br><span class="jp">カーレ チェルシーブーツ</span></h3>
   <p class="price">税込 <span class="price-val">¥40,700</span><small>送料無料</small></p>
   <p class="sizes">SIZE：EU 40–45（内寸 277–311mm）</p>
-  <div class="sw"><span class="cpill"><span class="dot" style="background:#5b4234"></span>ダークブラウン</span></div>
+  <div class="sw"><span class="cpill"><span class="dot" style="background:#5b4234"></span>ブラウン</span></div>
   <div class="buy"><a href="https://store.upioutdoor.com/products/pomar-kaarre" target="_blank" rel="noopener" class="en">BUY ON STORE <span class="ar">→</span></a></div>
 </div><div class="card" id="card-karlac1" data-opt="タン">
   <a class="imgbox" href="https://store.upioutdoor.com/products/pomar-karla-sneakers" target="_blank" rel="noopener" aria-label="KARLA WOMEN&#x27;S SNEAKERS 102 Tan を購入ページで見る"><span class="gtag w en">WOMEN'S</span><span class="so-tag en">SOLD OUT</span><img class="main-img" src="/assets/p-karla-tan.jpg" alt="KARLA WOMEN&#x27;S SNEAKERS 102 Tan"></a>
@@ -294,7 +294,7 @@ table.szt{width:100%;border-collapse:collapse;font-size:12.5px;letter-spacing:.0
   <h3 class="en">KARLA WOMEN&#x27;S SNEAKERS<br><span class="jp">カーラ ウィメンズ スニーカー</span></h3>
   <p class="price">税込 <span class="price-val">¥25,300</span><small>送料無料</small></p>
   <p class="sizes">SIZE：EU 36–40</p>
-  <div class="sw"><span class="cpill"><span class="dot" style="background:#c39869"></span>ライトブラウン</span></div>
+  <div class="sw"><span class="cpill"><span class="dot" style="background:#c39869"></span>タン</span></div>
   <div class="buy"><a href="https://store.upioutdoor.com/products/pomar-karla-sneakers" target="_blank" rel="noopener" class="en">BUY ON STORE <span class="ar">→</span></a></div>
 </div><div class="card" id="card-savic0" data-opt="ホワイト">
   <a class="imgbox" href="https://store.upioutdoor.com/products/pomar-savi-sneakers" target="_blank" rel="noopener" aria-label="SAVI Pomar+ MEN&#x27;S SNEAKERS 101 White を購入ページで見る"><span class="gtag en">MEN'S</span><span class="so-tag en">SOLD OUT</span><img class="main-img" src="/assets/p-savi-white.jpg" alt="SAVI Pomar+ MEN&#x27;S SNEAKERS 101 White"></a>
@@ -430,6 +430,12 @@ function swSel(btn, cardId){
         var opt=card.getAttribute('data-opt')||'';
         var mine=opt?vs.filter(function(v){return v.option1===opt}):vs;
         if(!mine.length)mine=vs;
+        var best=mine.filter(function(v){return v.available!==false})[0]||mine[0];
+        if(best&&best.id){
+          var vurl='https://store.upioutdoor.com/products/'+m[1]+'?variant='+best.id;
+          var lb=card.querySelector('a.imgbox'); if(lb) lb.setAttribute('href',vurl);
+          var bb=card.querySelector('.buy a'); if(bb) bb.setAttribute('href',vurl);
+        }
         var v0=mine[0];
         if(v0&&v0.price){var pr=card.querySelector('.price-val');if(pr)pr.textContent=yen(v0.price);}
         if(v0&&v0.featured_image&&v0.featured_image.src){
