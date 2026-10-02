@@ -224,13 +224,13 @@ table.szt{width:100%;border-collapse:collapse;font-size:12.5px;letter-spacing:.0
 
 <section class="sec"><div class="wrap">
   <div class="sec-head"><p class="eyebrow en">WOMEN</p><h2 class="t">ウィメンズ 内寸表（mm）</h2></div>
-  <p class="tbl-hint en">SWIPE <span class="sw-anim">→</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500">　横にスクロールできます</span></p><div class="tbl-wrap"><div class="tbl-scroll"><table class="szt"><tr><th style="text-align:left;padding-left:14px">モデル ＼ サイズ表記</th><th>36</th><th>37</th><th>38</th><th>39</th><th>40</th><th>41</th></tr><tr><td class="nm">NEITO<small>ネイト</small></td><td>240</td><td>246</td><td>252</td><td>259</td><td>266</td><td>272</td></tr><tr><td class="nm">NIVA<small>ニヴァ</small></td><td>242</td><td>248</td><td>254</td><td>260</td><td>266</td><td>273</td></tr><tr><td class="nm">PERHO<small>ペルホ</small></td><td>237</td><td>244</td><td>250</td><td>257</td><td>264</td><td>270</td></tr><tr><td class="nm">ORAS<small>オラス</small></td><td>237</td><td>244</td><td>250</td><td>257</td><td>264</td><td>270</td></tr></table></div></div>
+  <p class="tbl-hint en">SWIPE <span class="sw-anim">→</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500">　横にスクロールできます</span></p><div class="tbl-wrap"><div class="tbl-scroll"><table class="szt"><tr><th style="text-align:left;padding-left:14px">モデル ＼ サイズ表記</th><th>36</th><th>37</th><th>38</th><th>39</th><th>40</th><th>41</th></tr><tr><td class="nm">NEITO<small>ネイト</small></td><td>240</td><td>246</td><td>252</td><td>259</td><td>266</td><td>272</td></tr><tr><td class="nm">NIVA<small>ニヴァ</small></td><td>242</td><td>248</td><td>254</td><td>260</td><td>266</td><td>273</td></tr><tr><td class="nm">PERHO<small>ペルホ</small></td><td>237</td><td>244</td><td>250</td><td>257</td><td>264</td><td>270</td></tr><tr><td class="nm">ORAS<small>オラス</small></td><td>237</td><td>244</td><td>250</td><td>257</td><td>264</td><td>270</td></tr><tr><td class="nm">VARJO<small>ヴァルヨ</small></td><td>240</td><td>246</td><td>252</td><td>259</td><td>266</td><td>—</td></tr><tr><td class="nm">UTU<small>ウトゥ</small></td><td>—</td><td>248</td><td>254</td><td>260</td><td>266</td><td>—</td></tr><tr><td class="nm">REKI<small>レキ</small></td><td>—</td><td>—</td><td>252</td><td>260</td><td>266</td><td>—</td></tr></table></div></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
   <div class="sec-head"><p class="eyebrow en">MEN</p><h2 class="t">メンズ 内寸表（mm）</h2></div>
   <p class="tbl-hint en">SWIPE <span class="sw-anim">→</span><span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500">　横にスクロールできます</span></p><div class="tbl-wrap"><div class="tbl-scroll"><table class="szt"><tr><th style="text-align:left;padding-left:14px">モデル ＼ サイズ表記</th><th>40</th><th>41</th><th>42</th><th>43</th><th>44</th><th>45</th></tr><tr><td class="nm">AITA<small>アイータ</small></td><td>271</td><td>277</td><td>284</td><td>290</td><td>297</td><td>303</td></tr><tr><td class="nm">KAARRE<small>カーレ</small></td><td>277</td><td>284</td><td>291</td><td>298</td><td>304</td><td>311</td></tr><tr><td class="nm">KUJA<small>クーヤ</small></td><td>277</td><td>284</td><td>291</td><td>298</td><td>304</td><td>311</td></tr></table></div></div>
-  <p style="font-size:12px;color:var(--sub);margin-top:18px">※ 両足の踵からつま先までの実寸の長い方に7〜10mmをプラスしてお選びください。靴によって内寸が異なる場合があります。スニーカー（SAVI／KARLA／VIRE）のサイズ詳細は各商品ページをご確認ください。</p>
+  <p style="font-size:12px;color:var(--sub);margin-top:18px">※ 両足の踵からつま先までの実寸の長い方に7〜10mmをプラスしてお選びください。靴によって内寸が異なる場合があります。「—」はお取り扱いのないサイズです。スニーカー（SAVI／KARLA／VIRE）のサイズ詳細は各商品ページをご確認ください。</p>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -326,7 +326,7 @@ function swSel(btn, cardId){
       function yen(v){return '¥'+Math.round(Number(v)).toLocaleString('ja-JP')}
       document.querySelectorAll('.card').forEach(function(card){
         var a=card.querySelector('a.imgbox');if(!a)return;
-        var m=(a.getAttribute('href')||'').match(/\/products\/([a-z0-9-]+)/);if(!m||!by[m[1]])return;
+        var m=(a.getAttribute('href')||'').match(/\/products\/([^?#\/]+)/);if(m){try{m[1]=decodeURIComponent(m[1])}catch(e){}}if(!m||!by[m[1]])return;
         var p=by[m[1]], vs=p.variants||[];
         var opt=card.getAttribute('data-opt')||'';
         var mine=opt?vs.filter(function(v){return v.option1===opt}):vs;

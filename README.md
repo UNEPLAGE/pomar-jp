@@ -38,7 +38,7 @@
 ### index.html（トップ）
 1. ヘッダー（ロゴ／ナビ: BRAND・SHOE CARE・SIZE GUIDE・LINEUP）
 2. ヒーロー（写真スライド4枚 `hero.jpg` `hero-a.jpg` `h-neito.jpg` `h-aita.jpg`、キャッチ「北欧の暮らしに寄り添う、フィンランドの本格派シューズ。」）
-3. **LINEUP** — 2026 Autumn & Winter（商品カード8点。全13SKUはラインナップページへ）
+3. **LINEUP** — 2026 Autumn & Winter（商品カード11点：先頭3点が新作 VARJO／UTU／REKI〈NEWタグ〉。全品はラインナップページへ）
 4. **FUNCTION MARKS** — 機能性マークについて（WATERPROOF／WARM／EXTRA WARM／GRIP SOLE）
 5. **ブランドムービー** `assets/brand.mp4`（自動再生・ループ・無音、ポスター `brand-poster.jpg`）
 6. **POMAR ｜ ポマール — FINLAND, POMARKKU** — 1960年創業。今もなお、家族経営のものづくり。（写真 `craft-wet.jpg`＋黒地テキスト＋CRAFTSMANSHIP）
@@ -47,9 +47,10 @@
 
 ### lineup.html（製品ラインナップ）
 1. ページタイトル「製品ラインナップ」（LINEUP — 2026 AUTUMN & WINTER）
-2. **WOMEN** ウィメンズ（NEITO／NIVA／PERHO／ORAS）
+2. **WOMEN** ウィメンズ（NEITO／NIVA／PERHO／ORAS／VARJO／UTU／REKI）
 3. **MEN** メンズ（AITA黒／AITA茶／KAARRE／KUJA）
 4. **SNEAKERS** スニーカー（KARLA白／KARLA茶／VIRE／SAVI白／SAVI茶）※女性→男性の順
+5. **CARE ITEMS** ケアアイテム（Collonil オーガニック バンブーローション／プロテクト＆ケア）`id="care"`
 
 ### about.html（ブランドストーリー）
 1. ページタイトル「pomar（ポマール）の歩み」（BRAND STORY）＋年表（1960／1994／2000〜）
@@ -99,7 +100,7 @@
 - 商品画像: `assets/p-<商品名>-<色>.jpg`（正方形・白背景・1000px程度）
 - 商品を追加するときは、既存カードをコピーして id を変える（id は重複不可）
 
-### 掲載中の13SKU
+### 掲載中の18SKU（シューズ16＋ケア2）
 
 | 品番 | 商品名 | 色 | 税込 | サイズ | ストアURL |
 |---|---|---|---|---|---|
@@ -116,6 +117,14 @@
 | 33271-120 | VIRE ウィメンズ スリッポン スニーカー | ブラック | ¥23,650 | EU 36–40 | …/pomar-vire-womens-sneakers |
 | 43625-101 | SAVI Pomar+ メンズ スニーカー | ホワイト | ¥26,400 | EU 40–44 | …/pomar-savi-sneakers |
 | 43625-102 | SAVI Pomar+ メンズ スニーカー | ライトブラウン | ¥26,400 | EU 40–44 | …/pomar-savi-sneakers |
+| 38127-100 | VARJO ウィメンズ アンクルブーツ（2026-10追加） | ブラック | ¥43,450 | EU 36–40 | …/pomar-varjo-womens-gore-tex%C2%AE%EF%B8%8E |
+| （SKU未登録） | UTU ウィメンズ ウィンターブーツ（2026-10追加） | ブラック | ¥54,450 | EU 37–40 | …/pomar-utu-womens-gore-tex%C2%AE%EF%B8%8E |
+| （SKU未登録） | REKI ウィメンズ フェルトブーツ（2026-10追加） | グレー | ¥45,650 | EU 38–40 | …/pomar-reki-womens-gore-tex%C2%AE%EF%B8%8E |
+| CO-0783 | Collonil オーガニック バンブーローション 200ml | — | ¥2,640 | — | …/collonil_lotion |
+| CO-0148 | Collonil オーガニック プロテクト＆ケア 200ml | — | ¥2,640 | — | …/collonil_care |
+
+※ 2026-10追加の5品は、画像を `assets/` ではなく Shopify CDN（cdn.shopify.com）から直接表示しています。公式の白背景画像を `assets/` に置く場合は、カードの `src` を差し替えてください。
+※ 自動反映スクリプトは、ハンドルに `®︎` や `_` を含む商品URLにも対応済み（2026-10修正）。
 
 ---
 
@@ -157,4 +166,4 @@
 - 商品の価格・在庫は `store.upioutdoor.com/collections/pomar/products.json` を読んでページ側で更新する仕組みが入っています（HTMLの価格は初期表示用）
 - Google アナリティクス: 未設置。orukayak.jp と同様に GA4 の測定IDが決まったら各HTMLの `<head>` 先頭に gtag を追加
 - DNS: お名前.com（pomar.jp）→ Vercel（A `76.76.21.21`／CNAME www → `cname.vercel-dns.com`）
-- 未対応事項: SIZE GUIDE 足長の図（素材待ち）／Collonil ケア用品2点（入荷待ち）／公式画像のない7品番
+- 未対応事項: 公式画像のない7品番
