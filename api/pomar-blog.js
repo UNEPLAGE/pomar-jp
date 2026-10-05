@@ -46,7 +46,8 @@ function fmtDate(d) { // ISO -> YYYY.MM.DD（日本時間）
 // タグ一覧HTMLから記事パーマリンク（/blogs/<blog>/<article>）を出現順に抽出
 function extractArticleUrls(html) {
   const urls = [];
-  const re = /href=["'](\/blogs\/[^"'\/]+\/[^"'?#]+)["']/g;
+    // 対象ブログ「blog」の記事のみ（他ブログ /blogs/information/… 等は除外）
+  const re = /href=["'](\/blogs\/blog\/[^"'?#]+)["']/g;
   let m;
   while ((m = re.exec(html))) {
     const href = m[1];
