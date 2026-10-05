@@ -166,4 +166,5 @@
 - 商品の価格・在庫は `store.upioutdoor.com/collections/pomar/products.json` を読んでページ側で更新する仕組みが入っています（HTMLの価格は初期表示用）
 - Google アナリティクス: 未設置。orukayak.jp と同様に GA4 の測定IDが決まったら各HTMLの `<head>` 先頭に gtag を追加
 - DNS: お名前.com（pomar.jp）→ Vercel（A `76.76.21.21`／CNAME www → `cname.vercel-dns.com`）
+- INFORMATION / POMAR BLOG（トップpage・自動更新）: 記事は Vercel のサーバーレス関数が取得し、同一オリジンのJSONで配信（ブラウザからの直接取得はCORS/403で不可のため中継）。`api/pomar-news.js`＝upioutdoor.com タグ「pomar」(RSSで一覧＋各記事の og:image を補完)、`api/pomar-blog.js`＝Shopify ブログ タグ「POMARブログ」(タグ一覧→各記事の og:title/og:image/公開日)。トップの `.news-grid[data-feed="/api/…"]` が読み込んで最新4件を表示（新着は自動反映・追加コミット不要）。表示件数は `data-count`、取得元URL・タグは各APIファイル冒頭の定数で変更。取得失敗時はそのセクションを自動で非表示。レスポンスは s-maxage=600 でキャッシュ。ヘッダーの INFO(新着情報)→`/#information`、BLOG(ブログ)→`/#pomar-blog`。**この2セクションはローカルの file:// では動かず、Vercelデプロイ後に表示される**
 - 未対応事項: 公式画像のない7品番

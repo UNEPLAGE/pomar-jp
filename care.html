@@ -45,6 +45,8 @@ nav a:hover:after,nav a.cur:after{width:100%}
 nav a.cta{border:1px solid var(--ink);padding:10px 20px;border-radius:99px;transition:.25s;font-weight:700}
 nav a.cta:hover{background:var(--ink);color:#fff}
 nav a.cta:after{display:none}
+nav a.nitem{display:inline-flex;flex-direction:column;align-items:center;gap:3px;line-height:1.25;text-align:center}
+nav a.nitem .jp{font-family:'Zen Kaku Gothic New','Hiragino Sans',sans-serif;font-size:9px;font-weight:400;letter-spacing:.04em;color:var(--sub)}
 @media(max-width:860px){
   .hd{flex-wrap:wrap;height:auto;padding:14px 24px 0;align-items:flex-start}
   .hd .logo img{height:19px}
@@ -207,9 +209,11 @@ table.szt{width:100%;border-collapse:collapse;font-size:12.5px;letter-spacing:.0
 <header><div class="hd">
   <a class="logo" href="/"><img src="/assets/logo-pomar-grey.svg" alt="pomar"></a>
   <nav><ul>
-    <li><a href="/about" class="en">BRAND</a></li>
-    <li><a href="/care" class="en cur">SHOE CARE</a></li>
-    <li><a href="/size" class="en">SIZE GUIDE</a></li>
+    <li><a href="/about" class="en nitem">BRAND<span class="jp">ブランドについて</span></a></li>
+    <li><a href="/care" class="en nitem cur">SHOE CARE<span class="jp">ケア方法</span></a></li>
+    <li><a href="/size" class="en nitem">SIZE GUIDE<span class="jp">サイズ確認方法</span></a></li>
+    <li><a href="/#information" class="en nitem">INFO<span class="jp">新着情報</span></a></li>
+    <li><a href="/#pomar-blog" class="en nitem">BLOG<span class="jp">ブログ</span></a></li>
     <li><a href="/lineup" class="en cta">LINEUP</a></li>
   </ul></nav>
 </div></header>
