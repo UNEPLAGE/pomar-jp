@@ -517,7 +517,7 @@ function swSel(btn, cardId){
         if(!mine.length)mine=vs;
         var best=mine.filter(function(v){return v.available!==false})[0]||mine[0];
         if(best&&best.id){
-          var vurl='https://store.upioutdoor.com/products/'+encodeURIComponent(m[1])+'?variant='+best.id+'&utm_source=pomar.jp&utm_medium=referral';
+          var vurl='https://store.upioutdoor.com/products/'+encodeURIComponent(m[1])+'?variant='+best.id+'&utm_source=pomar.jp&utm_medium=referral&utm_campaign=brand_site';
           var lb=card.querySelector('a.imgbox'); if(lb) lb.setAttribute('href',vurl);
           var bb=card.querySelector('.buy a'); if(bb) bb.setAttribute('href',vurl);
         }
@@ -536,5 +536,5 @@ function swSel(btn, cardId){
 })();
 </script>
 <script>/* pomar.jp→store 流入計測: 店舗リンクにUTMを付与（新規リンクも自動対象） */
-(function(){document.querySelectorAll('a[href*="store.upioutdoor.com"]').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('utm_source=')>-1)return;a.setAttribute('href',h+(h.indexOf('?')>-1?'&':'?')+'utm_source=pomar.jp&utm_medium=referral')})})();</script>
+(function(){document.querySelectorAll('a[href*="store.upioutdoor.com"]').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('utm_source=')>-1)return;a.setAttribute('href',h+(h.indexOf('?')>-1?'&':'?')+'utm_source=pomar.jp&utm_medium=referral&utm_campaign=brand_site')})})();</script>
 </body></html>
