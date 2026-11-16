@@ -63,9 +63,10 @@
 ### care.html（シューケアガイド）
 1. ページタイトル「シューケアガイド」
 2. **6 RULES** — お手入れの基本、6つのルール
-3. **SHOE CARE PRODUCTS** — 推奨ケアアイテム ← ★Collonil 2品の入荷後にここへ追加
-4. **CARE BY MATERIAL** — 素材別のお手入れ
-5. **REPLACEABLE INSOLE** — インソールは取り外し可能。
+3. **SHOE CARE PRODUCTS** — 推奨ケアアイテム（Collonil オーガニック2品、ストア購入リンク付き）
+4. **CARE MOVIE** — 動画で見るお手入れ（`assets/care-felt.mp4` 0:52／`assets/care-leather.mp4` 0:45、ポスター `care-*-poster.jpg`、再生ボタン式・音声あり）
+5. **CARE BY MATERIAL** — 素材別のお手入れ
+6. **REPLACEABLE INSOLE** — インソールは取り外し可能。
 
 ### size.html（サイズガイド）
 1. ページタイトル「サイズガイド」
@@ -139,7 +140,7 @@
 | `mark-` | 機能性マーク（4種） | `mark-waterproof.jpg` |
 | `t` | 年表用サムネイル | `t1960.jpg` |
 | `logo-` | ロゴ（pomar白・グレー、UPI） | `logo-pomar-white.svg` |
-| 動画 | `brand.mp4`（0:48 無音）＋`brand-poster.jpg`／`craft.mp4`（2:01 音声あり）＋`craft-poster.jpg` | |
+| 動画 | `brand.mp4`（0:48 無音）＋`brand-poster.jpg`／`craft.mp4`（2:01 音声あり）＋`craft-poster.jpg`／`care-felt.mp4`（0:52）・`care-leather.mp4`（0:45）＋各`-poster.jpg`（シューケアガイド） | |
 
 - 写真を差し替えるときは **同じファイル名で上書き** すればHTMLの変更は不要
 - 公式画像の原本: Dropbox「Lifestyle by Product Number」（品番でファイル名）／動画は Dropbox「動画」
